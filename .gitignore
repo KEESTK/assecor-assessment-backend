@@ -1,0 +1,16 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.log
+
+# Rider / VSCode
+.idea/
+.vscode/
+
+# Docker
+**/docker-compose.override.yml
+
+# OS
+.DS_Store

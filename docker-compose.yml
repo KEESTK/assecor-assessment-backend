@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:16
+    container_name: assecor-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: assecor
+    ports:
+      - "5432:5432"
+    volumes:
+      - assecor_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d assecor"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: src/Assecor.Assessment.Api/Dockerfile
+    container_name: assecor-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=assecor;Username=postgres;Password=postgres"
+      CSV_PATH: "sample-input.csv"
+
+      # Development mode is intentionally enabled to expose Swagger UI
+      # for assessment review and easier API verification.
+      # In a real production deployment this would be set to "Production".
+      ASPNETCORE_ENVIRONMENT: "Development"
+
+    ports:
+      - "8080:8080"
+
+volumes:
+  assecor_pgdata:

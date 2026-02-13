@@ -1,0 +1,20 @@
+services:
+  postgres_test:
+    image: postgres:16
+    container_name: assecor-postgres-test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: assecor_test
+    ports:
+      - "5433:5432"
+    volumes:
+      - assecor_pgdata_test:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d assecor_test"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  assecor_pgdata_test:
