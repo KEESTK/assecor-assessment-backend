@@ -208,9 +208,6 @@ dotnet build src/Assecor.Assessment.Infrastructure -v minimal
 ```
 
 ---
-
-Here is **4.5 rewritten in the same clean, structured style** as your previous phases.
-
 ---
 
 ## 4.5 Dependency Injection Wiring
@@ -262,9 +259,6 @@ This allows:
 
 
 ---
-
-Here’s the refactored section (concise, same style), **plus** the point of the middleware lines.
-
 ---
 
 2. Configure DI and routing in `src/Assecor.Assessment.Api/Program.cs`.

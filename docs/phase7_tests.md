@@ -130,14 +130,9 @@ services:
 volumes:
   assecor_pgdata_test:
 ```
-
-Cool — A it is. Here’s the **exact implementation** for 7.2 with TRUNCATE reset + dedicated test Postgres on `5433`.
-
 ---
 
 ## 7.2.1 Start test Postgres
-
-(You already created `docker-compose.test.yml`.)
 
 ```bash
 docker compose -f docker-compose.test.yml up -d

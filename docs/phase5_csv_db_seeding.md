@@ -32,9 +32,6 @@ Seed the PostgreSQL database from `sample-input.csv` automatically on applicatio
    * reads CSV via `IPersonCsvSource`
    * maps to Domain `Person` (reuse `CsvPersonImporter`)
    * upserts into DB by `CsvLineNumber` (idempotent)
-
-Perfect — here is the **modified Phase 5 README section**, written as if this was the original architectural intention (clean, intentional, no mention of previous approach).
-
 ---
 
 ### 4. Register CSV seeding mechanism in the API project
@@ -77,10 +74,6 @@ bin/Debug/net9.0/
 and later inside the Docker container.
 
 ---
-
-Absolutely — this nuance should be documented clearly and professionally.
-
-Here is the updated README section, clean and neutral (no personal info), explaining exactly how `CSV_PATH` works.
 
 ---
 
@@ -143,7 +136,7 @@ Fix: Update Infrastructure .csproj
 
 Open: `src/Assecor.Assessment.Infrastructure/Assecor.Assessment.Infrastructure.csproj`
 
-Add this ItemGroup (anywhere under <Project ...>):
+Add this ItemGroup under <Project ...>:
 
 ```xml
 <ItemGroup>
