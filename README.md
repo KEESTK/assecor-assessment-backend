@@ -1,10 +1,10 @@
-# TECHNICAL DOCUMENTATION
+# DOCUMENTATION
 
 # 1. Overview
 
 This project implements a RESTful backend for managing persons and their favourite colour according to the Assecor Assessment specification.
 
-The solution is built using **.NET 9 (C#)** and is strongly structured around **Domain-Driven Design (DDD)** and **Clean Architecture principles**.
+The solution is built using **.NET 9 (C#)** and is strongly structured around **Domain-Driven Design (DDD)** and **Clean Architecture principles**. For more Insight on the development process, visit the 8 phases documentation at docs/phase*.md 
 
 Key characteristics:
 
