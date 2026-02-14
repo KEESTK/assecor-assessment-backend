@@ -54,7 +54,7 @@ This ensures:
 
 ---
 
-# 3. Requirement Mapping (With Implementation Depth)
+# 3. Requirement Mapping and Implemented solution overwiew
 
 ## 3.1 Manage Persons and Favourite Colour
 
@@ -339,7 +339,10 @@ Covers:
 
 # 9. How to Run
 ## Clone Repository
-using your prefered method.
+
+```bash
+git clone https://github.com/KEESTK/assecor-assessment-backend.git
+```
 
 ## Local
 
@@ -347,13 +350,20 @@ using your prefered method.
 dotnet run --project src/Assecor.Assessment.Api
 ```
 
+Swagger (from local build):
+
+```
+http://localhost:5183/swagger
+```
+
+
 ## Docker
 
 ```bash
 docker compose up --build
 ```
 
-Swagger:
+Swagger (from docker build):
 
 ```
 http://localhost:8080/swagger
